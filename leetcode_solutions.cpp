@@ -157,40 +157,108 @@
 //     display_ans(threeSum(v));
 //     return 0;
 // }
+// ###########################################################
+// #include <bits/stdc++.h>
+// using namespace std;
 
-#include <bits/stdc++.h>
-using namespace std;
+// vector<vector<int>> threesum(vector<int>& nums){
+//     set<vector<int>> s;
+//     sort(nums.begin(),nums.end());
+//     int n = nums.size();
+//     vector<int> temp;
+//     temp.resize(3);
 
-vector<vector<int>> threesum(vector<int>& nums){
-    set<vector<int>> s;
-    sort(nums.begin(),nums.end());
-    int n = nums.size();
-    vector<int> temp;
-    temp.resize(3);
+//     for(int i=0;i<n;i++)
+//         for(int j = i+1;j<n;j++){
+//             if(binary_search(nums.begin() + j + 1,nums.end(),-nums[i]-nums[j])){
+//                 temp[0] = nums[i],temp[1]=nums[j],temp[2]=-nums[i]-nums[j];
+//                 sort(temp.begin(),temp.end());
+//                 s.insert(temp);
+//             }
+//         }
 
-    for(int i=0;i<n;i++)
-        for(int j = i+1;j<n;j++){
-            if(binary_search(nums.begin() + j + 1,nums.end(),-nums[i]-nums[j])){
-                temp[0] = nums[i],temp[1]=nums[j],temp[2]=-nums[i]-nums[j];
-                sort(temp.begin(),temp.end());
-                s.insert(temp);
-            }
-        }
+//     vector<vector<int>>ans;
+//     for(auto triplet:s){
+//         ans.push_back(triplet);
+//         return ans;
+//     }
+// }
 
-    vector<vector<int>>ans;
-    for(auto triplet:s){
-        ans.push_back(triplet);
-        return ans;
-    }
-}
+// void display_ans(vector<vector<int>> temp){
+//     for(auto triplet:temp)
+//     cout<<triplet[0]<<" "<<triplet[1]<<" "<<triplet[2]<<"\n";
+// }
 
-void display_ans(vector<vector<int>> temp){
-    for(auto triplet:temp)
-    cout<<triplet[0]<<" "<<triplet[1]<<" "<<triplet[2]<<"\n";
-}
+// int main(){
+//     vector<int> v{-1,0,1,2,-1,-4};
+//     display_ans(threeSum(v));
+//     return 0;
+// }
 
-int main(){
-    vector<int> v{-1,0,1,2,-1,-4};
-    display_ans(threeSum(v));
-    return 0;
-}
+// ################################################################
+//26. Remove Duplicates from Sorted Array
+// #include<bits/stdc++.h>
+// #include <algorithm>
+// using namespace std;
+
+// int removeDup(vector<int>& nums){
+
+//     if(nums.empty()){
+//         return 0;
+//     }
+
+//     vector<int> v1;
+
+//     // int uniqueCount = 0;
+//     for(int i = 0;i<nums.size();i++){
+//         if(nums[i] != nums[i-1]){
+//             v1.push_back(nums[i]);
+//         }
+//     }
+
+//     //printing the new vector
+//     for(auto i : v1){
+//         cout<<i<<" ";
+//     }
+// }
+
+
+// int main(){
+//     vector <int> v1 = {1,2,3,3,4,5,6,6};
+
+//     // for(int i = 0;i<v1.size();i++)
+//     //     for(int j = i+1;j<v1.size();j++)
+//     //         if(v1[i] == v1[j]){
+//     //             v1.erase(v1.begin() +j);
+//     //             j--;
+//     //         }
+
+//     // for(int num :v1){
+//     //     cout<<num<<" ";
+//     // }
+
+//     removeDup(v1);
+
+// }
+
+// class Solution {
+// public:
+//     int removeDuplicates(vector<int>& nums) {
+//         if (nums.empty()) {
+//             return 0;
+//         }
+
+//         int uniqueCount = 1; // Initialize with 1, as the first element is always unique.
+
+//         for (int i = 1; i < nums.size(); i++) {
+//             if (nums[i] != nums[i - 1]) {
+//                 nums[uniqueCount] = nums[i];
+//                 uniqueCount++;
+//             }
+//         }
+
+//         return uniqueCount;
+//     }
+// };
+
+// #################end####################################################################################
